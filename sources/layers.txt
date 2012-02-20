@@ -15,4 +15,4 @@ meta-opie,git://github.com/bluelightning/meta-opie.git,master,HEAD
 meta-java,git://github.com/woglinde/meta-java.git,master,HEAD
 meta-mozilla,git://github.com/OSSystems/meta-mozilla.git,master,HEAD
 openembedded-core,git://github.com/openembedded/oe-core.git,master,HEAD
-meta-kovan,git://github.com/sutajiokousagi/meta-kosagi.git,master,HEAD
+meta-kosagi,git://github.com/sutajiokousagi/meta-kosagi.git,master,HEAD
