@@ -21,6 +21,8 @@
 
 # Use this till we get a maintenance branch based of the release tag
 
+umask 0002
+
 ###############################################################################
 # User specific vars like proxy servers
 ###############################################################################
