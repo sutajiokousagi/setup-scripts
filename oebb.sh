@@ -374,7 +374,7 @@ then
     then
         shift
         oe_build $*
-        exit 0
+        exit $?
     fi
 
     if [ $1 = "config" ]
