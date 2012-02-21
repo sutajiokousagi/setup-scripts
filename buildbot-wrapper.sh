@@ -39,11 +39,6 @@ OE_BASE=${PWD}
 BASE_VERSION=3
 OE_ENV_FILE=~/.oe/environment-oecore
 
-###############################################################################
-# SET_ENVIRONMENT() - Setup environment variables for OE development
-###############################################################################
-function set_environment()
-{
 
 # Workaround for differences between yocto bitbake and vanilla bitbake
 export BBFETCH2=True
