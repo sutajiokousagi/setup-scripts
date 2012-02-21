@@ -69,7 +69,7 @@ do
 	DIR=$(echo ${SRC} | cut -d, -f1)
 	URI=$(echo ${SRC} | cut -d, -f2)
 	BRA=$(echo ${SRC} | cut -d, -f3)
-	pushd sources/$SRC
+	pushd sources/${DIR}
 	git fetch -t ${URI} ${BRA}
 	git reset --hard FETCH_HEAD
 	git rev-parse HEAD
