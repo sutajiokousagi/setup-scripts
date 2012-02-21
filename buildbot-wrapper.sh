@@ -68,6 +68,19 @@ if [ ! -e ${OE_ENV_FILE} ] ; then
 fi
 . ${OE_ENV_FILE}
 
+# Update everything
+for SRC in $(grep -v '^#' sources/layers.txt  | grep 'HEAD$')
+do
+	DIR=$(echo ${SRC} | cut -d, -f1)
+	URI=$(echo ${SRC} | cut -d, -f2)
+	BRA=$(echo ${SRC} | cut -d, -f3)
+	pushd sources/$SRC
+	git fetch -t ${URI} ${BRA}
+	git reset --hard FETCH_HEAD
+	git rev-parse HEAD
+	popd
+done
+
 
 cd ${OE_BUILD_DIR}
 if [ -z $MACHINE ] ; then
