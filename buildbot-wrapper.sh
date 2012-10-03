@@ -58,23 +58,9 @@ if [ x"${BASE_VERSION}" != x"${SCRIPTS_BASE_VERSION}" ] ; then
 	rm ${OE_ENV_FILE}
 fi
 
-if [ ! -e ${OE_ENV_FILE} ] ; then
-    ./oebb.sh config ${MACHINE}
-fi
+rm -f ${OE_ENV_FILE}
+./oebb.sh config ${MACHINE}
 . ${OE_ENV_FILE}
-
-# Update everything
-for SRC in $(grep -v '^#' sources/layers.txt  | grep 'HEAD$')
-do
-	DIR=$(echo ${SRC} | cut -d, -f1)
-	URI=$(echo ${SRC} | cut -d, -f2)
-	BRA=$(echo ${SRC} | cut -d, -f3)
-	pushd sources/${DIR}
-	git fetch -t ${URI} ${BRA}
-	git reset --hard FETCH_HEAD
-	git rev-parse HEAD
-	popd
-done
 
 
 cd ${OE_BUILD_DIR}
