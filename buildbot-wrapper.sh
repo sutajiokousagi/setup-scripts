@@ -45,6 +45,10 @@ export BBFETCH2=True
 
 export TAG
 
+MACHINE=$1
+shift
+git checkout ${MACHINE}
+
 #--------------------------------------------------------------------------
 # If an env already exists, use it, otherwise generate it
 #--------------------------------------------------------------------------
