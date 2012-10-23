@@ -37,7 +37,6 @@ PROXYHOST=""
 OE_BASE=${PWD}
 # incremement this to force recreation of config files
 BASE_VERSION=3
-OE_ENV_FILE=~/.oe/environment-oecore
 
 
 # Workaround for differences between yocto bitbake and vanilla bitbake
@@ -62,9 +61,13 @@ if [ x"${BASE_VERSION}" != x"${SCRIPTS_BASE_VERSION}" ] ; then
 	rm ${OE_ENV_FILE}
 fi
 
-rm -f ${OE_ENV_FILE}
-./oebb.sh config ${MACHINE}
+if [ ! -e ${OE_ENV_FILE} ] ; then
+    ./oebb.sh config ${MACHINE}
+fi
 . ${OE_ENV_FILE}
+
+# Update everything
+./oebb.sh update
 
 
 cd ${OE_BUILD_DIR}
