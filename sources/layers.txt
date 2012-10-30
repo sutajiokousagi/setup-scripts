@@ -4,4 +4,4 @@ meta-angstrom,git://github.com/Angstrom-distribution/meta-angstrom.git,master,c3
 meta-openembedded,git://github.com/openembedded/meta-oe.git,master,83281ff6b918b05f0d12d11a0a031db30f7fb1a5
 meta-opie,git://github.com/bluelightning/meta-opie.git,master,1f2f03c6c269ab336a6b8c908bcca8bc88194703
 openembedded-core,git://github.com/openembedded/oe-core.git,master,e5ad03093dfc4364d1407183f458df79f347c7a1
-meta-kosagi,git://github.com/sutajiokousagi/meta-kosagi.git,master,HEAD
+meta-kosagi,git://github.com/sutajiokousagi/meta-kosagi.git,kovan,HEAD
